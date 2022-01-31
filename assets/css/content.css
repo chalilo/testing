@@ -1,0 +1,165 @@
+/*INDEX*/
+#mainIndex{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+#mainIndex iframe{
+    width: 720px;
+    height: 720px;
+}
+/*ABOUT*/
+#mainAbout{
+    display: grid;
+    grid-template-areas: "t t""i subt""i p";
+    grid-template-rows: 40px 30px auto;
+    grid-template-columns: 30% 60%;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    margin-left: 5%;
+}
+#mainAbout h2{
+    grid-area: t;
+}
+#mainAbout img{
+    grid-area: i;
+    justify-self: left;
+    margin-bottom: 10px;
+    }
+#mainAbout h3{
+    grid-area: subt;
+}
+#mainAbout p{
+    grid-area: p;
+    padding: 5px;
+}
+/*NEWS*/
+.newsContainer{
+    display: grid;
+    grid-template-areas:"nt nd" "np np" "na na" ;
+    grid-template-columns: 90% 10%;
+    border: solid #000 1px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.newsContainer h3{
+    grid-area: nt;
+}
+.newsContainer span{
+    grid-area: nd;
+    justify-self: right;
+}
+.newsContainer p{
+    grid-area: np;
+    padding: 5px;
+}
+.newsContainer a{
+    grid-area: na;
+    margin: -5px 5px;
+    padding-bottom: 5px;
+}
+/*CONTACT*/
+#mainContact{
+    display: grid;
+    grid-template-areas: "tCon tCon" "form mail";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+#mainContact h2{
+    grid-area: tCon;
+}
+#mainContact form{
+    grid-area: form;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: flex-start;
+}
+#mainContact>form input,select,textarea{
+    min-width: 99%;
+    margin: 5px auto;
+    align-items: center;
+    padding: 5px 0;
+}
+#mainContact div{
+    grid-area: mail;
+    justify-self: center;
+}
+#mainContact>div p{
+    margin: 5px 5px 10px 5px;
+}
+/*SOCIALS*/
+#mainSocials{
+    display: grid;
+    grid-template-areas: "st" "sd";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+}
+#mainSocials h2{
+    grid-area: st;
+    width: 100%;
+}
+#mainSocials div{
+    grid-area: sd;
+    display: grid;
+    grid-template-columns: repeat(6 , 1fr);
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+#mainSocials img{
+    width: 120px;
+    align-self: center;
+}
+/*Media Queries*/
+@media (max-width: 480px) {
+    #mainIndex iframe{
+        width: 360px;
+        height: 360px;
+    }
+    #mainAbout{
+        grid-template-areas: "t""subt""i""p";
+        grid-template-rows: 40px 40px auto;
+        grid-template-columns: 90%;
+        }
+    #mainSocials div{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    #mainSocials>div img{
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1023px) {
+    #mainIndex iframe{
+        width: 400px;
+        height: 400px;
+    }
+    #mainAbout{
+        grid-template-areas: "t""subt""i""p";
+        grid-template-rows: 40px 30px auto;
+        grid-template-columns: 90%;
+        }
+    #mainSocials div{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    }
+
+/*SPECIAL QUERIE*/
+@media (max-width: 550px) {
+    #mainContact{
+        grid-template-areas: "tCon" "form" "mail";
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        justify-content: space-evenly;
+    }
+    #mainContact div{
+        justify-self: left;
+        margin: 10px 0px;
+    }
+}
